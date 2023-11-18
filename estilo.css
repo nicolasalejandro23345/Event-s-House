@@ -43,3 +43,28 @@ body {
     align-items: center;
     gap: 0 20px;
 }
+.container2 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+.container3 {
+    max-width:625px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+.container4 {
+    max-width:700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5d1b0;
+}
+.container5 {
+    max-width:700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5d1b0;
+}
+

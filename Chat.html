@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event's House</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -26,10 +26,65 @@
             <div>
                 <a href="Redes Sociales y contacto.html" class="button">Redes Sociales-Contacto</a>
             </div>
+            <div>
+                <a href="Iniciar sesión.html" class="button">Iniciar sesión</a>
+            </div>
         </div>
     </div>
     <h1>Chat</h1>
-    <p></p>
+
+   
+<body>
+<div class="container4">
+<h1>Chat</h1>
+<h2 class="centrado"></h2>
+<chat class="centrado" width="640" height="360" controls>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Nombre de Usuario</title>
+    <style>
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-width:   600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-box">
+    <div id="chat"></div>
+    <input type="text" id="mensaje" placeholder="Escribe tu mensaje...">
+    <button onclick="enviarMensaje()">Enviar</button>
+</div>
+
+<script>
+    function enviarMensaje() {
+        var mensajeInput = document.getElementById("mensaje");
+        var mensaje = mensajeInput.value;
+
+        if (mensaje.trim() !== "") {
+            var chatBox = document.getElementById("chat");
+            var nombreUsuario = prompt("Por favor, ingresa tu nombre:");
+            var mensajeConNombre = `<strong>${nombreUsuario}:</strong> ${mensaje}<br>`;
+            chatBox.innerHTML += mensajeConNombre;
+
+         
+            mensajeInput.value = "";
+        } else {
+            alert("Por favor, escribe un mensaje.");
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
     
 </body>
 </html>

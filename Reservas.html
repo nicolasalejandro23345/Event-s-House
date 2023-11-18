@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event's House</title>
+    <title>calendario de reservas</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+   
     <div class="container">
         <h1 class="titulo">Event's House</h1>
         <div class="botones_container">
@@ -26,10 +27,192 @@
             <div>
                 <a href="Redes Sociales y contacto.html" class="button">Redes Sociales-Contacto</a>
             </div>
+            <div>
+                <a href="Iniciar sesión.html" class="button">Iniciar sesión</a>
+            </div>
         </div>
     </div>
-    <h1>Reservas</h1>
-    <p></p>
+         
+    
+    <div class="container5">
+            <h3 class="centrado">Reservas</h3>
+            <reservas class="centrado" width="640" height="360" controls>
+                
+
+                <!DOCTYPE html>
+                <html lang="es">
+                <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Calendario de Reservas</title>
+                  <style>
+                    table {
+                      width: 100%;
+                      border-collapse: collapse;
+                      margin-top: 20px;
+                    }
+                
+                    th, td {
+                      border: 1px solid #ddd;
+                      padding: 8px;
+                      text-align: center;
+                    }
+                
+                    th {
+                      background-color: #f2f2f2;
+                    }
+                
+                    ul {
+                      list-style: none;
+                      padding: 0;
+                    }
+                
+                    ul li {
+                      margin-bottom: 5px;
+                    }
+                  </style>
+                </head>
+                <body>
+                
+                  <h2>Calendario de Reservas</h2>
+                
+                  <div>
+                    <label for="anio">Selecciona un año:</label>
+                    <input type="number" id="anio" min="2022" max="2030" value="2023" onchange="cargarDisponibilidad()">
+                  </div>
+                
+                  <div>
+                    <label for="mes">Selecciona un mes:</label>
+                    <select id="mes" onchange="cargarDisponibilidad()">
+                      <option value="01">Enero</option>
+                      <option value="02">Febrero</option>
+                      <option value="03">Marzo</option>
+                      <option value="04">Abril</option>
+                      <option value="05">Mayo</option>
+                      <option value="06">Junio</option>
+                      <option value="07">Julio</option>
+                      <option value="08">Agosto</option>
+                      <option value="09">Septiembre</option>
+                      <option value="10">Octubre</option>
+                      <option value="11">Noviembre</option>
+                      <option value="12">Diciembre</option>
+                    </select>
+                  </div>
+                
+                  <div>
+                    <label for="dia">Selecciona un día:</label>
+                    <input type="number" id="dia" min="1" max="31" value="1" onchange="cargarDisponibilidad()">
+                  </div>
+                
+                  <div>
+                    <label for="hora">Selecciona una hora:</label>
+                    <select id="hora">
+                      <option value="00:00">12:00 AM</option>
+                      <option value="01:00">1:00 AM</option>
+                      <option value="02:00">2:00 AM</option>
+                      <option value="03:00">3:00 AM</option>
+                      <option value="04:00">4:00 AM</option>
+                      <option value="05:00">5:00 AM</option>
+                      <option value="06:00">6:00 AM</option>
+                      <option value="07:00">7:00 AM</option>
+                      <option value="08:00">8:00 AM</option>
+                      <option value="09:00">9:00 AM</option>
+                      <option value="10:00">10:00 AM</option>
+                      <option value="11:00">11:00 AM</option>
+                     
+                      <option value="12:00">12:00 PM</option>
+                      <option value="13:00">1:00 PM</option>
+                      <option value="14:00">2:00 PM</option>
+                      <option value="15:00">3:00 PM</option>
+                      <option value="16:00">4:00 PM</option>
+                      <option value="17:00">5:00 PM</option>
+                      <option value="18:00">6:00 PM</option>
+                      <option value="19:00">7:00 PM</option>
+                      <option value="20:00">8:00 PM</option>
+                      <option value="21:00">9:00 PM</option>
+                      <option value="22:00">10:00 PM</option>
+                      <option value="23:00">11:00 PM</option>
+                     
+                    </select>
+                  </div>
+                
+                  <button onclick="reservar()">Reservar</button>
+                
+                  <h3>Fechas disponibles:</h3>
+                  <ul id="fechasDisponibles"></ul>
+                
+                  <h3>Fechas ocupadas:</h3>
+                  <ul id="fechasOcupadas"></ul>
+                
+                  <script>
+                    var reservas = [
+                      "2023-11-10T14:30",
+                      "2023-11-15T10:00",
+                      "2023-11-20T16:45",
+                      "2023-12-05T12:00",
+                      "2023-12-15T14:30",
+                      "2023-12-25T18:00"
+                    ];
+                
+                    function cargarDisponibilidad() {
+                    
+                      var anioSeleccionado = document.getElementById("anio").value;
+                     
+                      var mesSeleccionado = document.getElementById("mes").value;
+                   
+                      var diaSeleccionado = document.getElementById("dia").value;
+                    
+                      var horaSeleccionada = document.getElementById("hora").value;
+                
+                      
+                      var fechaHoraSeleccionada = anioSeleccionado + '-' + mesSeleccionado.padStart(2, '0') + '-' + diaSeleccionado.padStart(2, '0') + 'T' + horaSeleccionada;
+                
+                     
+                      var fechasOcupadas = reservas.filter(function (fecha) {
+                        return fecha.startsWith(fechaHoraSeleccionada);
+                      });
+                
+                     
+                      mostrarFechas("fechasDisponibles", []);
+                      mostrarFechas("fechasOcupadas", fechasOcupadas);
+                    }
+                
+                    function mostrarFechas(idLista, fechas) {
+                      var lista = document.getElementById(idLista);
+                      lista.innerHTML = "";
+                      fechas.forEach(function (fecha) {
+                        var listItem = document.createElement("li");
+                        listItem.textContent = fecha;
+                        lista.appendChild(listItem);
+                      });
+                    }
+                
+                    function reservar() {
+                      var anioSeleccionado = document.getElementById("anio").value;
+                      var mesSeleccionado = document.getElementById("mes").value;
+                      var diaSeleccionado = document.getElementById("dia").value;
+                      var horaSeleccionada = document.getElementById("hora").value;
+                
+                  
+                      var nuevaReserva = anioSeleccionado + '-' + mesSeleccionado.padStart(2, '0') + '-' + diaSeleccionado.padStart(2, '0') + 'T' + horaSeleccionada;
+                
+                      
+                      reservas.push(nuevaReserva);
+                
+                      
+                      cargarDisponibilidad();
+                    }
+                  </script>
+                
+                </body>
+                </html>
+                
+                
+                
+
+
+        
+        </div>
     
 </body>
 </html>
