@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event's House</title>
+    <link rel="icon" type="image/jpg" href="1/favicon.jpg"/>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Event's House</h1>
+        <div class="botones_container">
+            <div>
+                <a href="Inicio.html" class="button">Inicio</a>
+            </div>
+            <div>
+                <a href="Información.html" class="button">Información</a>
+            </div>
+            <div>
+                <a href="Chat.html" class="button">Chat</a>
+            </div>
+            <div>
+                <a href="Reservas.html" class="button">Reservas</a>
+            </div>
+            <div>
+                <a href="cotizaciones.html" class="button">cotizaciones</a>
+            </div>   
+        </div>
+    </div>
+
+    <h1>Información</h1>
+   
+    <!DOCTYPE html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Event's House</h1>
+        <p>Organizando momentos inolvidables</p>
+    </header>
+
+    <section>
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una empresa dedicada a la planificación y organización de eventos excepcionales. Desde bodas y fiestas de cumpleaños hasta eventos corporativos, estamos aquí para hacer que cada ocasión sea especial y memorable.</p>
+    </section>
+
+    <section>
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Planificación y coordinación de eventos</li>
+            <li>Diseño de decoración personalizada</li>
+            <li>Entretenimiento y música en vivo</li>
+            <li>Catering y servicio de banquetes</li>
+          
+        </ul>
+    </section>
+
+    <section>
+        <h2>Contacto y redes sociales</h2>
+        <p>¡Estamos aquí para ayudarte a hacer realidad tus sueños! Contáctanos para discutir tus ideas y cómo podemos hacer que tu próximo evento sea inolvidable.</p>
+        <p>Email: richarbolanos0@gmail.com</p>
+        <p>Teléfono: (+57) 3212393296</p>
+        <p>Instagram:  <a href="https://instagram.com/richarbolanos0?igshid=NTc4MTIwNjQ2YQ==" target="_blank">Haga click aquí</a></p> 
+        <p>facebook: <a href="https://www.facebook.com/elgatoriky?mibextid=LQQJ4d" target="_blank">Haga click aquí</a></p>
+    </section>
+    <section class="evento">
+        
+        <div class="comentarios">
+            <h3>Comentarios</h3>
+            <ul id="lista-comentarios">
+               
+            </ul>
+    
+          
+            <form id="formulario-comentario">
+                <label for="comentario">Deja tu comentario:</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+    
+                <label for="calificacion">Calificación:</label>
+                <div class="calificacion">
+                    <input type="radio" name="estrellas" value="5" id="5estrellas" required>
+                    <label for="5estrellas">5</label>
+                    <input type="radio" name="estrellas" value="4" id="4estrellas">
+                    <label for="4estrellas">4</label>
+                    <input type="radio" name="estrellas" value="3" id="3estrellas">
+                    <label for="3estrellas">3</label>
+                    <input type="radio" name="estrellas" value="2" id="2estrellas">
+                    <label for="2estrellas">2</label>
+                    <input type="radio" name="estrellas" value="1" id="1estrella">
+                    <label for="1estrella">1</label>
+                </div>
+    
+                <button type="button" onclick="agregarComentario()">Agregar Comentario</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        function agregarComentario() {
+            
+            var comentario = document.getElementById("comentario").value;
+            var calificacion = document.querySelector('input[name="estrellas"]:checked');
+            
+           
+            if (!calificacion) {
+                alert("Por favor, selecciona una calificación.");
+                return;
+            }
+    
+        
+            var nuevoComentario = document.createElement("li");
+            nuevoComentario.innerHTML = `<strong>Usuario:</strong> ${comentario} | <strong>Calificación:</strong> ${calificacion.value} estrellas`;
+    
+            
+            var listaComentarios = document.getElementById("lista-comentarios");
+            listaComentarios.appendChild(nuevoComentario);
+    
+           
+            document.getElementById("formulario-comentario").reset();
+        }
+    </script>
+    
+
+</body>
+</html>
+
+    

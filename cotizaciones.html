@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Eventos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .cotizacion {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .total {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <form id="cotizacionForm">
+        <label for="tipoEvento">Tipo de Evento:</label>
+        <input type="text" id="tipoEvento" name="tipoEvento" required>
+
+        <label for="numAsistentes">Número de Asistentes:</label>
+        <input type="number" id="numAsistentes" name="numAsistentes" required>
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required>
+
+        <button type="button" onclick="calcularCotizacion()">Obtener Cotización</button>
+    </form>
+
+    <div class="cotizacion" id="cotizacionResultado">
+        <p class="total">Cotización Total: $<span id="totalCotizacion"></span></p>
+    </div>
+
+    <script>
+        function calcularCotizacion() {
+            var tipoEvento = document.getElementById("tipoEvento").value;
+            var numAsistentes = document.getElementById("numAsistentes").value;
+            var ubicacion = document.getElementById("ubicacion").value;
+
+            
+            var costoBase = 450.000; 
+            var costoPorAsistente = 3; 
+
+            var totalCotizacion = costoBase + (costoPorAsistente * numAsistentes);
+
+            // Mostrar el resultado en la página
+            document.getElementById("totalCotizacion").textContent = totalCotizacion;
+            document.getElementById("cotizacionResultado").style.display = "block";
+        }
+    </script>
+      <div class="container">
+        <h1 class="titulo">Event's House</h1>
+        <div class="botones_container">
+            <div>
+                <a href="Inicio.html" class="button">Inicio</a>
+            </div>
+            <div>
+                <a href="Información.html" class="button">Información</a>
+            </div>
+            <div>
+                <a href="Chat.html" class="button">Chat</a>
+            </div>
+            <div>
+                <a href="Reservas.html" class="button">Reservas</a>
+            </div>
+            <div>
+                <a href="cotizaciones.html" class="button">cotizaciones</a>
+            </div>   
+        </div>
+    </div>
+
+</body>
+</html>

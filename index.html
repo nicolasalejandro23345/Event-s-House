@@ -13,6 +13,108 @@
 
 <body>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Ocultar el formulario después de iniciar sesión */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <h2>Iniciar Sesión</h2>
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="button" onclick="login()">Iniciar Sesión</button>
+    </form>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+
+            // Aquí puedes realizar la lógica de autenticación, por ejemplo, enviar los datos a un servidor.
+            // En un entorno real, debes usar un sistema de autenticación seguro y almacenar las contraseñas de forma segura.
+
+            // Ejemplo de salida en la consola para demostración
+            console.log("Nombre de usuario: " + username);
+            console.log("Correo electrónico: " + email);
+
+            // Ocultar el formulario después de iniciar sesión
+            document.getElementById("loginForm").classList.add("hidden");
+
+            // Puedes redirigir a otra página después del inicio de sesión exitoso
+            // window.location.href = "página-de-bienvenida.html";
+        }
+    </script>
+</body>
+</html>
+
+
     <div class="container">
         <h1 class="titulo">Event's House</h1>
         <div class="botones_container">
@@ -28,8 +130,15 @@
             <div>
                 <a href="Reservas.html" class="button">Reservas</a>
             </div>
+            <div>
+                <a href="cotizaciones.html" class="button">cotizaciones</a>
+            </div>   
         </div>
     </div>
+
+
+    
+    
 
 
 
