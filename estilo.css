@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Página de Eventos</title>
+    <title>Event's house</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!-- Contenido de tu página aquí -->
-</body>
-</html>
 body {
     background-color: #f4f4f4;
     color: #333;
@@ -98,12 +95,12 @@ body {
 .container2 {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px; 
     background-color: #ffffff;
 }
 .container3 {
     max-width:625px;
-    margin: 0 auto;
+    margin: -0 auto;
     padding: 20px;
     background-color: #ffffff;
 }
@@ -119,6 +116,12 @@ body {
     padding: 20px;
     background-color: #f5d1b0;
 }
+
+
+    
+</body>
+</html>
+
 
 
 
